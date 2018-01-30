@@ -1,0 +1,46 @@
+{
+  "name": "hpo-goplot",
+  "version": "1.0.0",
+  "description": "A Gene Ontology Plot For HPO Terms",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "babel": "babel --presets es2015 src/index.js -o build/main.bundle.js",
+    "start": "http-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iimpulse/hpo-goplot.git"
+  },
+  "keywords": [
+    "plot",
+    "graph",
+    "d3",
+    "human",
+    "phenotype",
+    "ontology",
+    "hpo",
+    "terms",
+    "gene",
+    "ontology",
+    "genes"
+  ],
+  "author": "Michael Gargano",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iimpulse/hpo-goplot/issues"
+  },
+  "homepage": "https://github.com/iimpulse/hpo-goplot#readme",
+  "dependencies": {
+    "d3": "^4.12.2",
+    "webpack-dev-server": "^2.11.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-es2015": "^6.24.1",
+    "webpack": "^3.10.0"
+  }
+}

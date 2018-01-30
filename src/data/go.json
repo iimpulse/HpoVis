@@ -1,0 +1,44 @@
+[{
+    "category": "cellularComponent",
+    "terms":[
+        {
+         "id":"GOTERM1",
+         "value": 20
+        },
+        {
+            "id":"GOTERM2",
+            "value": 4
+        },
+        {
+            "id":"GOTERM3",
+            "value": 103
+        }]
+},
+{
+    "category": "molecularFunction",
+    "terms":[
+        {"id":"GOTERM1",
+         "value": 50
+        },{
+            "id":"GOTERM2",
+            "value": 45
+        },
+        {
+            "id":"GOTERM3",
+            "value": 90
+        }]
+},
+{
+    "category": "biologicalProcess",
+    "terms":[
+        {"id":"GOTERM1",
+         "value": 100
+        },{
+            "id":"GOTERM2",
+            "value": 103
+        },
+        {
+            "id":"GOTERM3",
+            "value": 103
+        }]
+}]
