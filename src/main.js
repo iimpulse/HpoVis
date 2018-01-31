@@ -4,8 +4,8 @@ class hpoVisuals{
     constructor(){
         this.goPlot();
     }
-    goPlot(){
-        new GoPlot();
+    goPlot(data,colors,height,width){
+        new GoPlot(data,colors,height,width);
     }
 }
 module.exports = hpoVisuals;
