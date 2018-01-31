@@ -10,7 +10,6 @@ Node Package Manager
 
 `npm install`
 
----
 ## Deploy For Development ##
 
 `webpack-dev-server` - Will deploy to localhost:8080
