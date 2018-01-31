@@ -11,9 +11,9 @@ export class GoPlot{
     initializeGoPlot(){
         // Set Height Width and Margin of Plot
         // TODO: Make this dyanamic based on viewport?
-        var margin = {top: 20, right: 20, bottom: 30, left: 40},
-        width = 600 - margin.left - margin.right,
-        height = 600 - margin.top - margin.bottom;
+        var margin = {top: 20, right: 40, bottom: 30, left: 80},
+        width = 400 - margin.left,
+        height = 400 - margin.top - margin.bottom;
         var x0 = d3.scaleBand().range([0,width]).padding([.3])
         var x1 = d3.scaleBand();
         var y = d3.scaleLinear().range([0,height]);
@@ -34,20 +34,19 @@ export class GoPlot{
             x0.domain(categories);
             x1.domain(goTerms).range([0,x0.bandwidth()]);
             y.domain([0, d3.max(data, function(d) { return d3.max(d.terms, function(d) { return d.value; }); })]);
-            canvas.append("g").attr("class", "x-axis").call(xAxis);
+            // Create both Axis
+            canvas.append("g").attr("class", "x-axis").call(xAxis).selectAll("text")	
+            .style("text-anchor", "end").attr("dy", "-1em").attr("transform", "rotate(-45)");
             canvas.append("g").attr("class", "y axis").style('opacity','0').call(yAxis);
             canvas.select('.y').transition().duration(500).delay(1300).style('opacity', '1');
             // A slice is a Category on the bar graph
-            var slice = canvas.selectAll(".slice")
-            .data(data)
-            .enter().append("g")
-            .attr("class","g").attr("transform",function(d) { return "translate(0," + x0(d.category) + ")";});
+            var slice = canvas.selectAll(".slice").data(data)
+            .enter().append("g").attr("class","g") 
+            .attr("transform",function(d) { return "translate(0," + x0(d.category) + ")";});
             // Create a rectangle for each term and set the width and its color;
-            slice.selectAll("rect")
-            .data(function(d){return d.terms;})
-            .enter().append("rect")
-            .attr("y", function(d){ return x1(d.id)})
-            .attr("x", function(d){ return y(0); })
+            // Get all the "rect" for each slice (should be zero) and 
+            slice.selectAll("rect").data(function(d){return d.terms;}).enter()
+            .append("rect").attr("y", function(d){ return x1(d.id)}).attr("x", function(d){ return 0; })
             .style("fill", function(d,i){ 
                 var color = colors(category);
                 if(i == 2){
@@ -56,12 +55,8 @@ export class GoPlot{
                 return color;
             }).attr("height", function(d){ return x1.bandwidth();});
             // Transition the height of each sub slice bar to the height of its value after a delay for effect.
-            slice.selectAll("rect")
-            .transition()
-            .delay(function(d){return Math.random() * 1000})
-            .duration(1000)
-            .attr("x",function(d) {return x1(d.value);})
-            .attr("width",function(d){ return height - y(d.value)});
+            slice.selectAll("rect").transition().delay(function(d){return Math.random() * 1000}).duration(1000)
+            .attr("width",function(d){return y(d.value)});
         });
     }
 }
