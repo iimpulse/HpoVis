@@ -2,12 +2,17 @@ import * as d3 from 'd3';
 import {scale} from 'd3-scale';
 export class GoPlot{
     constructor(plotId,data,colors,height,width){
-        this.data = []; // use data if no data throw error
-        this.plotId = plotId ? plotId: ".goplot"; // default plotId
-        this.colors = colors ? colors: ["#009ad8", "#e50000","#31b44a", ] // use default colors
-        this.height = height ? height: 600; // use height otherwise default
-        this.width = width ? width: 600; // use width otherwise default
-        this.initializeGoPlot();
+        this.data = data ? data: null; // use data if no data throw error
+        /*if(data == null){
+            throw Error("No Data supplied to goPlot().");
+        }else{*/
+            this.plotId = plotId ? plotId: ".goplot"; // default plotId
+            this.colors = colors ? colors: ["#009ad8", "#e50000","#31b44a"] // use default colors
+            this.height = height ? height: 600; // use height otherwise default
+            this.width = width ? width: 600; // use width otherwise default
+            this.initializeGoPlot();
+        //}
+
     }
     initializeGoPlot(){
         // Set Height Width and Margin of Plot
