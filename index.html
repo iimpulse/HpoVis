@@ -16,7 +16,9 @@
     </div>
     <script src="hpoVisuals.js"></script>
     <script>
-       new hpoVisuals();
+        var data = [{"category":"cellularComponent","terms":[{"id":"GOTERM1","value":20},{"id":"GOTERM2","value":4},{"id":"GOTERM3","value":103}]},{"category":"molecularFunction","terms":[{"id":"GOTERM4","value":50},{"id":"GOTERM5","value":45},{"id":"GOTERM6","value":90}]},{"category":"biologicalProcess","terms":[{"id":"GOTERM7","value":100},{"id":"GOTERM8","value":103},{"id":"GOTERM9","value":270}]}];
+        var hpoV = new hpoVisuals(data);
+        hpoV.goPlot(data);
     </script>
 </body>
 </html>
