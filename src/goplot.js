@@ -65,7 +65,7 @@ export class GoPlot{
         // A slice is a Category on the bar graph
         let slice = canvas.selectAll(".slice").data(data)
         .enter().append("g")
-        .attrs({"class":"g","transform":function(d) { return "translate(0," + x0(d.category) + ")";}}); \
+        .attrs({"class":"g","transform":function(d) { return "translate(0," + x0(d.category) + ")";}});
 
         // Create a rectangle for each term and set the width and its color;
         // For each g in a category create another for each term to contain the bar and its label.
