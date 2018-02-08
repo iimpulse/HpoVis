@@ -17,28 +17,28 @@
 {
     "category": "molecularFunction",
     "terms":[
-        {"id":"GOTERM1",
+        {"id":"GOTERM4",
          "value": 50
         },{
-            "id":"GOTERM2",
+            "id":"GOTERM5",
             "value": 45
         },
         {
-            "id":"GOTERM3",
+            "id":"GOTERM6",
             "value": 90
         }]
 },
 {
     "category": "biologicalProcess",
     "terms":[
-        {"id":"GOTERM1",
+        {"id":"GOTERM7",
          "value": 100
         },{
-            "id":"GOTERM2",
+            "id":"GOTERM8",
             "value": 103
         },
         {
-            "id":"GOTERM3",
-            "value": 103
+            "id":"GOTERM9",
+            "value": 270
         }]
 }]
